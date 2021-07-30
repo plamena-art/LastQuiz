@@ -8,4 +8,6 @@ public interface FavBooksRepository {
     int insertBook(Book book);
 
     List<Book> getAllBooks();
+
+    Book SelectById(int id);
 }

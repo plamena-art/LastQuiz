@@ -18,5 +18,6 @@ public class BookService {
     }
     public List<Book> findAllBooks() {return bookRepository.getAllBooks();
     }
-
+    public Book getBooksByID(int id) { return bookRepository.SelectById(id);
+    }
 }

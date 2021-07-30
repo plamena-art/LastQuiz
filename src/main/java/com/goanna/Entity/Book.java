@@ -4,20 +4,37 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Book {
 
+    String author;
+    String title;
     int id;
-    String name;
 
-    public Book(@JsonProperty("id") int id,
-                @JsonProperty("name") String name) {
+    public Book(@JsonProperty("id") int id, @JsonProperty("title") String title , @JsonProperty("author") String author ) {
+        this.author = author;
+        this.title = title;
         this.id = id;
-        this.name = name;
     }
 
-    public int getId() {return id; }
+    public String getTitle() {
+        return title;
+    }
 
-    public void setId(int id) { this.id = id; }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-    public String getName() {return name; }
+    public String getAuthor() {
+        return author;
+    }
 
-    public void setName(String name) { this.name = name; }
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

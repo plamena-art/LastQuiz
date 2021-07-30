@@ -12,17 +12,25 @@ public class BookRepository implements FavBooksRepository {
 
     @Override
     public int insertBook(Book book) {
-   /*     DATABASE.add(new Book(1, "Eat Pray Love"));
-        DATABASE.add(new Book ( 2, "Rich Dad Poor Dad"));
-        DATABASE.add(new Book ( 3, "The Fountainhead"));
-        DATABASE.add(new Book (4, "Barefoot Investment"));
-        DATABASE.add(new Book (5,"Unshakeable")); */
-        DATABASE.add(new Book(book.getId(), book.getName()));
+        DATABASE.add(new Book(book.getId(), book.getTitle(), book.getAuthor()));
         return 1;
     }
 
     @Override
     public List<Book> getAllBooks() {
         return DATABASE;
+    }
+
+    @Override
+    public Book SelectById(int id) {
+        Book found = null;
+
+        for(Book book : DATABASE){
+            if(book.getId() == id){
+                found = book;
+            }
+        }
+
+        return found;
     }
 }
